@@ -88,7 +88,7 @@ async function main() {
     const product = await prisma.product.create({
       data: {
         ...productData,
-        featuredImageUrl: `https://picsum.photos/seed/${data.slug}/600/600`,
+        featuredImageUrl: `/images/products/手机壳侧视图.jpg`,
         totalStock: variants.reduce((sum, v) => sum + v.stock, 0),
         variants: {
           create: variants.map((v, i) => ({
@@ -97,13 +97,13 @@ async function main() {
             colorHex: v.colorHex,
             stock: v.stock,
             price: v.price,
-            imageUrl: `https://picsum.photos/seed/${data.slug}-${i}/600/600`,
+            imageUrl: `/images/products/手机壳侧视图.jpg`,
           })),
         },
         images: {
           create: [
-            { url: `https://picsum.photos/seed/${data.slug}-a/600/600`, order: 1, alt: `${data.name} View 1` },
-            { url: `https://picsum.photos/seed/${data.slug}-b/600/600`, order: 2, alt: `${data.name} View 2` },
+            { url: `/images/products/手机壳侧视图.jpg`, order: 1, alt: `${data.name} View 1` },
+            { url: `/images/products/手机壳侧视图.jpg`, order: 2, alt: `${data.name} View 2` },
           ],
         },
         categories: {
